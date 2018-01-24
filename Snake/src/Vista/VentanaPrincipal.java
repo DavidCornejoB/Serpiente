@@ -29,9 +29,9 @@ public class VentanaPrincipal  extends JFrame{
     private JLabel imagen;
     AudioClip snake = java.applet.Applet.newAudioClip(getClass().getResource("snake.wav"));
 
-    public VentanaPrincipal(String titulo, int w, int h)  {
-        super(titulo);
-        this.setSize(w, h);
+    public VentanaPrincipal()  {
+        super("SNAKE");        
+        this.setSize(510, 460);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(3);
         this.iniciaComponentes();

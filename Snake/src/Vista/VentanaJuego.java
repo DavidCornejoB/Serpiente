@@ -144,6 +144,144 @@ public class VentanaJuego extends JFrame implements KeyListener {
     public void setMenuItemList(List<JMenuItem> menuItemList) {
         this.menuItemList = menuItemList;
     }
+
+    public int getN() {
+        return n;
+    }
+
+    public void setN(int n) {
+        this.n = n;
+    }
+
+    public int getM() {
+        return m;
+    }
+
+    public void setM(int m) {
+        this.m = m;
+    }
+
+    public JPanel[][] getPanel() {
+        return panel;
+    }
+
+    public void setPanel(JPanel[][] panel) {
+        this.panel = panel;
+    }
+
+    public JTextField getT() {
+        return t;
+    }
+
+    public void setT(JTextField t) {
+        this.t = t;
+    }
+
+    public JLabel getLabel() {
+        return label;
+    }
+
+    public void setLabel(JLabel label) {
+        this.label = label;
+    }
+
+    public JDesktopPane getEscritorio() {
+        return escritorio;
+    }
+
+    public void setEscritorio(JDesktopPane escritorio) {
+        this.escritorio = escritorio;
+    }
+
+    public int getX() {
+        return X;
+    }
+
+    public void setX(int X) {
+        this.X = X;
+    }
+
+    public int getY() {
+        return Y;
+    }
+
+    public void setY(int Y) {
+        this.Y = Y;
+    }
+
+    public int getComidaX() {
+        return comidaX;
+    }
+
+    public void setComidaX(int comidaX) {
+        this.comidaX = comidaX;
+    }
+
+    public int getComidaY() {
+        return comidaY;
+    }
+
+    public void setComidaY(int comidaY) {
+        this.comidaY = comidaY;
+    }
+
+    public Mover getMov() {
+        return mov;
+    }
+
+    public void setMov(Mover mov) {
+        this.mov = mov;
+    }
+
+    public Lista getLista() {
+        return lista;
+    }
+
+    public void setLista(Lista lista) {
+        this.lista = lista;
+    }
+
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+
+    public String getMarcha() {
+        return marcha;
+    }
+
+    public void setMarcha(String marcha) {
+        this.marcha = marcha;
+    }
+
+    public AudioClip getComer() {
+        return comer;
+    }
+
+    public void setComer(AudioClip comer) {
+        this.comer = comer;
+    }
+
+    public AudioClip getPerder() {
+        return perder;
+    }
+
+    public void setPerder(AudioClip perder) {
+        this.perder = perder;
+    }
+
+    public AudioClip getJuego() {
+        return juego;
+    }
+
+    public void setJuego(AudioClip juego) {
+        this.juego = juego;
+    }
+    
+    
     
     
 

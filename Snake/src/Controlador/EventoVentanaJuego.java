@@ -39,10 +39,7 @@ public class EventoVentanaJuego implements ActionListener {
     public void setvPrincipal(VentanaPrincipal vPrincipal) {
         this.vPrincipal = vPrincipal;
     }
-
-    
-    
-    
+   
 
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -50,10 +47,13 @@ public class EventoVentanaJuego implements ActionListener {
         if(ae.getSource().equals(this.vJuego.getMenuItemList().get(0))){
             System.out.println("hola");
             
+            
         }
         
         if(ae.getSource().equals(this.vJuego.getMenuItemList().get(1))){
             this.vJuego.setVisible(false);
+            this.vJuego.getJuego().stop();
+            this.vPrincipal = new VentanaPrincipal();
             this.vPrincipal.setVisible(true);
             
             
