@@ -46,6 +46,7 @@ public class EventoVentanaJuego implements ActionListener {
         
         if(ae.getSource().equals(this.vJuego.getMenuItemList().get(0))){
             System.out.println("hola");
+            this.vJuego = new VentanaJuego();
             
             
         }

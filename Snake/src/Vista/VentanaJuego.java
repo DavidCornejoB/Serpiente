@@ -60,8 +60,6 @@ public class VentanaJuego extends JFrame implements KeyListener {
 
         mov.start();
         juego.loop();
-        this.escritorio = new JDesktopPane();
-        this.setContentPane(this.escritorio);
 
         this.barraMenu = new JMenuBar();
         this.menuList = new ArrayList<JMenu>();
