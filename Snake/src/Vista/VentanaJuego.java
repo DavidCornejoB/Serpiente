@@ -25,7 +25,7 @@ import javax.swing.JTextField;
  */
 public class VentanaJuego extends JFrame implements KeyListener {
 
-    int n = 40, m = 40;
+    int n = 40, m = 40, a=250;
     JPanel[][] panel = new JPanel[n][m];
     JTextField t = new JTextField();
     JLabel label = new JLabel("Puntaje = 0");
@@ -122,7 +122,20 @@ public class VentanaJuego extends JFrame implements KeyListener {
     public void keyReleased(KeyEvent e) {
     }
 
-    void crecer() {
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+    
+
+    void crecer() { 
+        if(puntos%5==0 && getA()>50) {
+            int e = a-50;
+            setA(e);
+        }
         puntos++;
         label.setText("Puntaje = " + puntos);
         if (puntos == 20) {  //Siguiente nivel
@@ -233,7 +246,7 @@ public class VentanaJuego extends JFrame implements KeyListener {
         public void run() {
             while (continuar) {
                 try {
-                    Thread.currentThread().sleep(200);
+                    Thread.currentThread().sleep(getA());
                     switch (tecla) {
                         case 37:
                             if (X >= 1) {
