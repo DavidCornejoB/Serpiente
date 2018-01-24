@@ -236,6 +236,7 @@ public class VentanaJuego extends JFrame implements KeyListener {
                             } else {
                                 perder.play();
                                 JOptionPane.showMessageDialog(null, "Perdiste", "Game Over", JOptionPane.ERROR_MESSAGE);
+                                perder.stop();
                                 this.stop();
                                
                             }
@@ -247,6 +248,7 @@ public class VentanaJuego extends JFrame implements KeyListener {
                             } else {
                                 perder.play();
                                 JOptionPane.showMessageDialog(null, "Perdiste", "Game Over", JOptionPane.ERROR_MESSAGE);
+                                perder.stop();
                                 this.stop();
                             }
                             break;
@@ -257,6 +259,7 @@ public class VentanaJuego extends JFrame implements KeyListener {
                             } else {
                                 perder.play();
                                 JOptionPane.showMessageDialog(null, "Perdiste", "Game Over", JOptionPane.ERROR_MESSAGE);
+                                perder.stop();
                                 this.stop();
                             }
                             break;

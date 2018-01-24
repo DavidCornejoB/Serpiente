@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.EventoVentanaPrincipal;
+import java.applet.AudioClip;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -26,6 +27,7 @@ public class VentanaPrincipal  extends JFrame{
     private List<JMenu> menuList;
     private List<JMenuItem> menuItemList; 
     private JLabel imagen;
+    AudioClip snake = java.applet.Applet.newAudioClip(getClass().getResource("snake.wav"));
 
     public VentanaPrincipal(String titulo, int w, int h)  {
         super(titulo);
@@ -56,6 +58,7 @@ public class VentanaPrincipal  extends JFrame{
         imagen.setIcon(new ImageIcon(getClass().getResource("fondo.png")));
         imagen.setBounds(0, 0, 500, 400);
         this.add(imagen);
+        snake.play();
 
        
         this.setJMenuBar(barraMenu);
@@ -101,6 +104,24 @@ public class VentanaPrincipal  extends JFrame{
     public void setMenuItemList(List<JMenuItem> menuItemList) {
         this.menuItemList = menuItemList;
     }
+
+    public JLabel getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(JLabel imagen) {
+        this.imagen = imagen;
+    }
+
+    public AudioClip getSnake() {
+        return snake;
+    }
+
+    public void setSnake(AudioClip snake) {
+        this.snake = snake;
+    }
+    
+    
 
    
 }
