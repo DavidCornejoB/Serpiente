@@ -25,7 +25,7 @@ import javax.swing.JTextField;
  */
 public class VentanaJuego extends JFrame implements KeyListener {
 
-    int n = 40, m = 40, a=250;
+    int n = 40, m = 40, a = 250;
     JPanel[][] panel = new JPanel[n][m];
     JTextField t = new JTextField();
     JLabel label = new JLabel("Puntaje = 0");
@@ -38,7 +38,6 @@ public class VentanaJuego extends JFrame implements KeyListener {
     Lista lista = new Lista();
     int puntos = 0;  //
     String marcha = "derecha";
-    
 
     AudioClip comer = java.applet.Applet.newAudioClip(getClass().getResource("comer.wav"));
     AudioClip perder = java.applet.Applet.newAudioClip(getClass().getResource("sad.wav"));
@@ -129,21 +128,20 @@ public class VentanaJuego extends JFrame implements KeyListener {
     public void setA(int a) {
         this.a = a;
     }
-    
 
-    void crecer() { 
-        if(puntos%5==0 && getA()>50) {
-            int e = a-50;
+    void crecer() {
+        if (puntos % 5 == 0 && getA() > 50) {
+            int e = a - 50;
             setA(e);
         }
         puntos++;
         label.setText("Puntaje = " + puntos);
-        if (puntos == 20) {  //Siguiente nivel
+        /*if (puntos == 20) {  //Siguiente nivel
 
             JOptionPane.showMessageDialog(null, "Juego Termino con Exito");
             System.out.println("valor de puntos" + puntos);
             mov.detenElHilo();
-        }
+        }*/
         Nodo n = new Nodo();
         n.setCodigo(lista.obtenerCodigo());
         lista.agregarFinal(n);
@@ -155,26 +153,26 @@ public class VentanaJuego extends JFrame implements KeyListener {
     }
 
     void validar() {
-        try{
-        if (panel[X][Y].getBackground() == Color.BLACK) {
-        } else if (panel[X][Y].getBackground() == Color.YELLOW) {
-            juego.stop();
-            perder.play();
-            JOptionPane.showMessageDialog(null, "Perdiste", "Game Over", JOptionPane.ERROR_MESSAGE);
-            perder.stop();
-            mov.detenElHilo();
-        } else if (panel[X][Y].getBackground() == Color.CYAN) {
-            crecer();
-            comer.play();
-        } 
-        limpiar();
+        try {
+            if (panel[X][Y].getBackground() == Color.BLACK) {
+            } else if (panel[X][Y].getBackground() == Color.YELLOW) {
+                juego.stop();
+                perder.play();
+                JOptionPane.showMessageDialog(null, "Perdiste", "Game Over", JOptionPane.ERROR_MESSAGE);
+                perder.stop();
+                mov.detenElHilo();
+            } else if (panel[X][Y].getBackground() == Color.CYAN) {
+                crecer();
+                comer.play();
+            }
+            limpiar();
         } catch (ArrayIndexOutOfBoundsException err) {
             juego.stop();
             perder.play();
             JOptionPane.showMessageDialog(null, "Perdiste", "Game Over", JOptionPane.ERROR_MESSAGE);
             perder.stop();
             mov.detenElHilo();
-            
+
         }
     }
 
@@ -258,7 +256,7 @@ public class VentanaJuego extends JFrame implements KeyListener {
                                 JOptionPane.showMessageDialog(null, "Perdiste", "Game Over", JOptionPane.ERROR_MESSAGE);
                                 perder.stop();
                                 this.stop();
-                               
+
                             }
                             break;
                         case 38:
