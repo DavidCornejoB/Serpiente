@@ -44,13 +44,15 @@ public class EventoVentanaJuego implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
 
         if (ae.getSource().equals(this.vJuego.getMenuItemList().get(0))) {
+            
             System.out.println("hola");
-            VentanaJuego v = new VentanaJuego();
-            v.setTitle("Snake");
-            v.setSize(486, 508);
-            v.setLocationRelativeTo(null);
-            v.setResizable(false);
-            v.setVisible(true);
+            vJuego = new VentanaJuego();
+            vJuego.setVisible(true);
+            vJuego.setTitle("Snake");
+            vJuego.setSize(486, 508);
+            vJuego.setLocationRelativeTo(null);
+            vJuego.setResizable(false);
+            vJuego.setVisible(true);
 
         }
 
