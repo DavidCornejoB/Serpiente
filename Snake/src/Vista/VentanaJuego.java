@@ -42,10 +42,12 @@ public class VentanaJuego extends JFrame implements KeyListener {
 
     AudioClip comer = java.applet.Applet.newAudioClip(getClass().getResource("comer.wav"));
     AudioClip perder = java.applet.Applet.newAudioClip(getClass().getResource("sad.wav"));
+    AudioClip juego = java.applet.Applet.newAudioClip(getClass().getResource("juego.wav"));
 
     public VentanaJuego() {
 
         mov.start();
+        //juego.loop();
         this.setLayout(null);
         t.requestFocus();
         t.addKeyListener(this);
@@ -143,8 +145,10 @@ public class VentanaJuego extends JFrame implements KeyListener {
         try{
         if (panel[X][Y].getBackground() == Color.BLACK) {
         } else if (panel[X][Y].getBackground() == Color.YELLOW) {
+            juego.stop();
             perder.play();
             JOptionPane.showMessageDialog(null, "Perdiste", "Game Over", JOptionPane.ERROR_MESSAGE);
+            perder.stop();
             mov.detenElHilo();
         } else if (panel[X][Y].getBackground() == Color.CYAN) {
             crecer();
@@ -152,8 +156,10 @@ public class VentanaJuego extends JFrame implements KeyListener {
         } 
         limpiar();
         } catch (ArrayIndexOutOfBoundsException err) {
+            juego.stop();
             perder.play();
             JOptionPane.showMessageDialog(null, "Perdiste", "Game Over", JOptionPane.ERROR_MESSAGE);
+            perder.stop();
             mov.detenElHilo();
             
         }
@@ -234,6 +240,7 @@ public class VentanaJuego extends JFrame implements KeyListener {
                                 izquierda();
                                 marcha = "izquierda";
                             } else {
+                                juego.stop();
                                 perder.play();
                                 JOptionPane.showMessageDialog(null, "Perdiste", "Game Over", JOptionPane.ERROR_MESSAGE);
                                 perder.stop();
@@ -246,6 +253,7 @@ public class VentanaJuego extends JFrame implements KeyListener {
                                 arriba();
                                 marcha = "arriba";
                             } else {
+                                juego.stop();
                                 perder.play();
                                 JOptionPane.showMessageDialog(null, "Perdiste", "Game Over", JOptionPane.ERROR_MESSAGE);
                                 perder.stop();
@@ -257,6 +265,7 @@ public class VentanaJuego extends JFrame implements KeyListener {
                                 derecha();
                                 marcha = "derecha";
                             } else {
+                                juego.stop();
                                 perder.play();
                                 JOptionPane.showMessageDialog(null, "Perdiste", "Game Over", JOptionPane.ERROR_MESSAGE);
                                 perder.stop();

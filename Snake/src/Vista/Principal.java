@@ -16,7 +16,7 @@ public class Principal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        VentanaPrincipal vp = new VentanaPrincipal("Snake", 510, 410);
+        VentanaPrincipal vp = new VentanaPrincipal("Snake", 510, 460);
     }
 
 }

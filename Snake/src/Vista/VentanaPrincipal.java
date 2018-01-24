@@ -58,8 +58,7 @@ public class VentanaPrincipal  extends JFrame{
         imagen.setIcon(new ImageIcon(getClass().getResource("fondo.png")));
         imagen.setBounds(0, 0, 500, 400);
         this.add(imagen);
-        snake.play();
-
+        snake.loop();
        
         this.setJMenuBar(barraMenu);
         this.barraMenu.add(this.menuList.get(0));
