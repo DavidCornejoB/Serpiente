@@ -41,7 +41,7 @@ public class VentanaJuego extends JFrame implements KeyListener {
     
 
     AudioClip comer = java.applet.Applet.newAudioClip(getClass().getResource("comer.wav"));
-    AudioClip perder = java.applet.Applet.newAudioClip(getClass().getResource("perder.wav"));
+    AudioClip perder = java.applet.Applet.newAudioClip(getClass().getResource("sad.wav"));
 
     public VentanaJuego() {
 
