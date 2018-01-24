@@ -47,7 +47,7 @@ public class VentanaJuego extends JFrame implements KeyListener {
     public VentanaJuego() {
 
         mov.start();
-        //juego.loop();
+        juego.loop();
         this.setLayout(null);
         t.requestFocus();
         t.addKeyListener(this);
