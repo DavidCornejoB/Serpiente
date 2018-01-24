@@ -33,6 +33,7 @@ public class EventoVentanaPrincipal implements ActionListener {
             
             VentanaJuego v = new VentanaJuego();
             this.vVentana.getSnake().stop();
+            this.vVentana.setVisible(false);
             v.setTitle("Snake");
             v.setSize(486, 508);
             v.setLocationRelativeTo(null);

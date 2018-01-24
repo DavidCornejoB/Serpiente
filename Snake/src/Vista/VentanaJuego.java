@@ -5,16 +5,24 @@
  */
 package Vista;
 
+import Controlador.EventoVentanaJuego;
+import Controlador.EventoVentanaPrincipal;
 import Modelo.Lista;
 import Modelo.Nodo;
 import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -29,6 +37,11 @@ public class VentanaJuego extends JFrame implements KeyListener {
     JPanel[][] panel = new JPanel[n][m];
     JTextField t = new JTextField();
     JLabel label = new JLabel("Puntaje = 0");
+
+    private JDesktopPane escritorio;
+    private JMenuBar barraMenu;
+    private List<JMenu> menuList;
+    private List<JMenuItem> menuItemList;
 
     int X = 0;
     int Y = 0;
@@ -47,6 +60,25 @@ public class VentanaJuego extends JFrame implements KeyListener {
 
         mov.start();
         juego.loop();
+        this.escritorio = new JDesktopPane();
+        this.setContentPane(this.escritorio);
+
+        this.barraMenu = new JMenuBar();
+        this.menuList = new ArrayList<JMenu>();
+        this.menuList.add(new JMenu("Juego"));
+
+        this.menuItemList = new ArrayList<JMenuItem>();
+        this.menuItemList.add(new JMenuItem("Nuevo Juego"));
+        this.menuItemList.add(new JMenuItem("Salir"));
+
+        this.setJMenuBar(barraMenu);
+        this.barraMenu.add(this.menuList.get(0));
+        this.menuList.get(0).add(this.menuItemList.get(0));
+        this.menuList.get(0).add(this.menuItemList.get(1));
+
+        this.menuItemList.get(0).addActionListener(new EventoVentanaJuego(this));
+        this.menuItemList.get(1).addActionListener(new EventoVentanaJuego(this));
+        
         this.setLayout(null);
         t.requestFocus();
         t.addKeyListener(this);
@@ -88,6 +120,32 @@ public class VentanaJuego extends JFrame implements KeyListener {
             panel[comidaX][comidaY].setBackground(Color.CYAN);
         }
     }
+
+    public JMenuBar getBarraMenu() {
+        return barraMenu;
+    }
+
+    public void setBarraMenu(JMenuBar barraMenu) {
+        this.barraMenu = barraMenu;
+    }
+
+    public List<JMenu> getMenuList() {
+        return menuList;
+    }
+
+    public void setMenuList(List<JMenu> menuList) {
+        this.menuList = menuList;
+    }
+
+    public List<JMenuItem> getMenuItemList() {
+        return menuItemList;
+    }
+
+    public void setMenuItemList(List<JMenuItem> menuItemList) {
+        this.menuItemList = menuItemList;
+    }
+    
+    
 
     public void keyTyped(KeyEvent e) {
     }
